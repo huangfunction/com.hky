@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+  <classPathEntry location="F:\repository\ojdbc\ojdbc\1.6\ojdbc-1.6.jar" />
+  <context id="context1">
+       <jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver" connectionURL="jdbc:oracle:thin:@localhost:1521:orcl" userId="huangkeying" password="111111"> </jdbcConnection>
+    <javaModelGenerator targetPackage="com.hky.wuyefeiguanli.model" targetProject="wuyefeiguanli/src/main/java" />
+    <sqlMapGenerator targetPackage="config.sqlmap" targetProject="wuyefeiguanli/src/main/resources" />
+    <javaClientGenerator targetPackage="com.hky.wuyefeiguanli.dao" targetProject="wuyefeiguanli/src/main/java" type="XMLMAPPER" />
+    <table  tableName="HOUSE">
+    </table>
+    <table  tableName="HOUSE_PAYMENT">
+    </table>
+    <table  tableName="HOUSE_LINKMAN">
+    </table>
+    <table  tableName="HOUSE_ACCOUNT">
+    </table>
+    <table  tableName="DEAL_LIST">
+    </table>
+  </context>
+</generatorConfiguration>

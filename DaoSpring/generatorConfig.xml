@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+  <classPathEntry location="F:\repository\ojdbc\ojdbc\1.6\ojdbc-1.6.jar" />
+  <context id="context1">
+       <jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver" connectionURL="jdbc:oracle:thin:@localhost:1521:orcl" userId="huangkeying" password="111111"> </jdbcConnection>
+    <javaModelGenerator targetPackage="com.hky.model" targetProject="DaoSpring/src/main/java" />
+    <sqlMapGenerator targetPackage="config.sqlmap" targetProject="DaoSpring/src/main/resources" />
+    <javaClientGenerator targetPackage="com.hky.dao" targetProject="DaoSpring/src/main/java" type="XMLMAPPER" />
+    <table  tableName="a">
+    </table>
+  </context>
+</generatorConfiguration>

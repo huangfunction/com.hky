@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+	   http://www.springframework.org/schema/beans/spring-beans.xsd
+	   http://www.springframework.org/schema/context
+	   http://www.springframework.org/schema/context/spring-context.xsd
+	   ">
+	   
+	<context:property-placeholder location="config\wuyefeiguanli.properties"/>
+	
+	<bean id="wyfglDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<property name="driverClass" value="${wyfgl.jdbc.driver}"></property>
+		<property name="jdbcUrl" value="${wyfgl.jdbc.url}"></property>
+		<property name="user" value="${wyfgl.jdbc.user}"></property>
+		<property name="password" value="${wyfgl.jdbc.passwd}"></property>
+	</bean>
+	
+	<bean id="wyfglSqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="wyfglDataSource"></property>
+		
+		<property name="mapperLocations">
+			<list><value>config/sqlmap/*.xml</value></list>
+		</property>
+	</bean>
+	
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="sqlSessionFactoryBeanName" value="wyfglSqlSessionFactory" />
+		<property name="basePackage" value="com.hky.wuyefeiguanli.dao"></property>
+	</bean>
+	
+	<context:annotation-config></context:annotation-config>
+	
+	<context:component-scan base-package="com.hky.wuyefeiguanli"></context:component-scan>
+	
+</beans>
