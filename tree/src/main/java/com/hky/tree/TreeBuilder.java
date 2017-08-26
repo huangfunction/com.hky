@@ -7,8 +7,8 @@ import com.hky.tree.intf.Node;
 
 /**
  * 树形结构数据构建器
- * 需传入两个实现类
- * TreeInfo 和 Node (一个空的实例即可)
+ * 需传入一个实现类
+ * <？extends Node> (new 一个即可)
  * 通过 tryAdd(Node) 方法将树形关系的数据组织起来
  * @author hky
  *
